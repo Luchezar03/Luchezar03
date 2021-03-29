@@ -13,6 +13,8 @@ for line in input_file:
         try:
             result[log[ip_idx]] = result[log[ip_idx]] + 1
         except:
+            result[log[ip_idx]] = 1        
+            except:
             result[log[ip_idx]] = 1
 
 print(log)
