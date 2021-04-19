@@ -1,4 +1,4 @@
-name: ci
+name: learn-github-actions
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: user/app:latest
+          tags: luchezar03/app:latest
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
