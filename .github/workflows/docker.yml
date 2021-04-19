@@ -6,9 +6,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+        env:
+          DOCKER_USER: $ {{ secrets.DOCKER_USER }}
+          DOCKER_PASSWORD: $ {{ secrets.DOCKER_PASSWORD }}
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - run: npm install -g http-server
       - run: http-server
       - name: http
         run: | 
           docker build ./http -t Luchezar03/14:1.0.0
+      - name: docker push
+        run: | 
+          docker push luchezar03/14:1.0.0
