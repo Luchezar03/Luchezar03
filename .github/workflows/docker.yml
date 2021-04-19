@@ -16,7 +16,7 @@ jobs:
           npm install -g http-server
       - name: docker build
         run: | 
-          docker build -t luchezar03/14:1.0.0
+          docker build ./ -t luchezar03/14:1.0.0
       - name: docker push
         run: | 
           docker push luchezar03/14:1.0.0
