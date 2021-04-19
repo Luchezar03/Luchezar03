@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: kennethreitz/httpbin:latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -27,4 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: start http
-        run: kennethreitz/httpbin
+        run: -p 8000:80 kennethreitz/httpbin
