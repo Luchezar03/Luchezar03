@@ -12,8 +12,12 @@ jobs:
           DOCKER_PASSWORD: $ {{ secrets.DOCKER_PASSWORD }}
         run: |
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-      - run: npm install -g http-server
-      - run: http-server
+      - name: install http
+        run: |
+          npm install -g http-server
+      - name: start http
+        run: |
+          http-server
       - name: http
         run: | 
           docker build ./http -t Luchezar03/14:1.0.0
