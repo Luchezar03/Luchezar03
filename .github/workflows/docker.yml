@@ -22,5 +22,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: start http
-      - run: npm install -g http-server
-      - run: http-server
+        run: 
+          npm install -g http-server
+          http-server
