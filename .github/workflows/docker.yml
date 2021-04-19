@@ -27,4 +27,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: start http
-        run: python -m SimpleHTTPServer 8000
+        run: kennethreitz/httpbin
