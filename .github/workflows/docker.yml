@@ -14,9 +14,12 @@ jobs:
       - name: install http
         run: |
           npm install -g http-server
-      - name: docker build
-        run: | 
-          docker build ./ -t luchezar03/14:1.0.0
-      - name: docker push
-        run: | 
-          docker push luchezar03/14:1.0.0
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: luchezar03/14:1.0.0
+      -
+        name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
