@@ -20,6 +20,5 @@ jobs:
         with:
           push: true
           tags: luchezar03/14:1.0.0
-      -
-        name: Image digest
+      - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
