@@ -21,4 +21,4 @@ jobs:
           context: .
           file: ./nodejs/Dockerfile
           push: true
-          tags: luchezar03/app:latest
+          tags: luchezar03/14:latest
