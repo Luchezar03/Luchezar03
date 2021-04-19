@@ -18,13 +18,9 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: kennethreitz/httpbin:latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
       - name: start http
-        run: -p 8000:80 kennethreitz/httpbin
+      - run: npm install -g http-server
+      - run: http-server -p 8000
