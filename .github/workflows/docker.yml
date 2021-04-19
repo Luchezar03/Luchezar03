@@ -14,10 +14,7 @@ jobs:
       - name: install http
         run: |
           npm install -g http-server
-      - name: start http
-        run: |
-          http-server
-      - name: http
+      - name: docker build
         run: | 
           docker build ./http -t Luchezar03/14:1.0.0
       - name: docker push
