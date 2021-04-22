@@ -11,14 +11,11 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - uses: actions/setup-node@v1
-      - name: install http
-        run: |
-      -
-        name: Build and push
+      - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./nodejs/Dockerfile
+          file: ./action/Dockerfile
           push: true
-          tags: luchezar03/14:latest
+          tags: ${{ secrets.DOCKER_USER }}/14:latest
