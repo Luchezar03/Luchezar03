@@ -1,6 +1,6 @@
-FROM debian:9.5-slim
+FROM centos
+RUN yum install httpd -y
+COPY index.html /var/www/html/
 
-WORKDIR /usr/src/app
-
-RUN npm install
-RUN npm install -g http-server
+CMD [“/usr/sbin/httpd”,” -D”,” FOREGROUND”]
+EXPOSE 80
